@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- CSS Portion -->
+    <style>
+        button {
+          outline: none;
+          border: 1px solid blue;
+          color: white;
+          background: blue;
+          border-radius: 5px;
+        }
+
+        #the-cert, #hash-it-button, #fraud-it-button, #finish-photoshop-button, #submit-again-button, #restart-button {
+          display: none;
+        }
+
+        #photoshop-field, #photoshop-field2 {
+          display: none;
+          margin:auto;
+          width: 50%;
+          text-align: center;
+        }
+    </style>
+  <!-- End CSS Portion -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>webpack starterkit</title>
+  <title>Cert Fraud Simulator</title>
 </head>
 <body>
-  <h1>webpack starter</h1>
-  <p>✨ A lightweight foundation for your next webpack based frontend project.</p>
+  <h1>Navozyme Cert Fraud Simulator</h1>
+  <p>✨ Forge your Maritime Certificate. See what happens with NCAP!</p>
+
+  <div id ="the-cert" style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
+    <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
+           <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
+           <br><br>
+           <span style="font-size:25px"><i>This is to certify that</i></span>
+           <br><br><br>
+           <span style="font-size:30px"><b><p id='cert-owner'>Cert Owner Placeholder</p></b>
+            <input id="photoshop-field" type="text" value="John Stark" style="font-size:30px"></span><br/>
+           <span style="font-size:25px"><i>has completed the course</i></span> <br/><br/>
+           <span style="font-size:30px"><p id='cert-name'>Cert Name Placeholder</p></span><br/>
+           <span style="font-size:20px">Cert Number: <p id='cert-number'>Cert Number Placeholder</p>
+            <input id="photoshop-field2" type="string" value="BT-35-T3557" style="font-size:20px"></span> <br/><br/><br/><br/>
+           
+    </div>
+    </div>
+
+    <button id="start-button">Start Simulation</button>
+    <button id="hash-it-button">Hash Cert!</button>
+    <button id="fraud-it-button">Psst, Want to Photoshop Your Cert?</button>
+    <button id="finish-photoshop-button">Finish Photoshop</button>
+    <button id="submit-again-button">Submit New Cert</button>
+    <button id="restart-button">Restart Simulation</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
