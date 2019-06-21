@@ -12,7 +12,29 @@ certNumber.innerText = 'BT-35-T3557';
 let theCert = document.getElementById('the-cert');
 let photoshopField = document.getElementById('photoshop-field');
 let photoshopField2 = document.getElementById('photoshop-field2');
+let hashCompare = document.getElementById('hash-compare');
 
+var hash = require('object-hash');
+let realHashDisplay = document.getElementById('real-hash-display');
+let fraudCheckHashDisplay = document.getElementById('fraud-check-hash-display');
+
+var realCertHash;
+var fraudCertHash;
+
+
+//Hash Comparison Function
+
+function compareHash(realCertHash,fraudCertHash){
+    
+    if (realCertHash === fraudCertHash){
+        console.log('They are the same');
+        hashCompare.innerText = 'They are the same';
+    }
+    else {
+        console.log('They are different');
+        hashCompare.innerText = 'They are different documents';
+    }
+}
 
 
 // Button Management
@@ -38,7 +60,17 @@ startButton.addEventListener('click',function(){
 
 hashItButton.addEventListener('click',function(){ 
     hashItButton.style.display = 'none';
-    fraudItButton.style.display = 'block';    
+    fraudItButton.style.display = 'block';
+    
+    //Hashing of Actual Cert
+    console.log(certOwner.innerText);
+    console.log(certNumber.innerText);
+
+    var bob1 = [certName.innerText, certOwner.innerText,certNumber.innerText];
+    console.log(hash(bob1)); 
+    realCertHash = hash(bob1);
+    realHashDisplay.innerText = realCertHash;  
+    realHashDisplay.style.display = 'block'; 
 });
 
 
@@ -62,16 +94,31 @@ finishPhotoshopButton.addEventListener('click',function(){
     photoshopField2.style.display = 'none';
     certOwner.style.display = 'block';
     certNumber.style.display = 'block';
+
+    //Get Values of Photoshopped Fields
+    certOwner.innerText = fraudValue1;
+    certNumber.innerText = fraudValue2;
+    var bob2 = [certName.innerText, certOwner.innerText,certNumber.innerText];
+    fraudCertHash = hash(bob2);
+    
     // Show Outcome & Allow Restart
+    fraudCheckHashDisplay.innerText = fraudCertHash;  
+    fraudCheckHashDisplay.style.display = 'block';
     finishPhotoshopButton.style.display = 'none';
     submitAgainButton.style.display = 'block';
+    
 });
 
 submitAgainButton.addEventListener('click',function(){ 
     submitAgainButton.style.display = 'none';
     restartButton.style.display = 'block';
+    compareHash(realCertHash,fraudCertHash);
+    hashCompare.style.display = 'block';
+
 });
 
 restartButton.addEventListener('click',function(){ 
     window.location.reload();
 });
+
+

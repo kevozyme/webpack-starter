@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+ 
   <!-- CSS Portion -->
     <style>
         button {
@@ -13,6 +13,10 @@
         }
 
         #the-cert, #hash-it-button, #fraud-it-button, #finish-photoshop-button, #submit-again-button, #restart-button {
+          display: none;
+        }
+
+        #real-hash-display,#fraud-check-hash-display, #hash-compare {
           display: none;
         }
 
@@ -48,6 +52,10 @@
            
     </div>
     </div>
+
+    <div id="real-hash-display">Real Cert Hash Display Placeholder</div>
+    <div id="fraud-check-hash-display">Fraud Check Hash Display Placeholder</div>
+    <div id="hash-compare">Hash Compare Outcome</div>
 
     <button id="start-button">Start Simulation</button>
     <button id="hash-it-button">Hash Cert!</button>
