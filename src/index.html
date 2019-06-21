@@ -4,20 +4,69 @@
  
   <!-- CSS Portion -->
     <style>
-        button {
+        /* button {
           outline: none;
           border: 1px solid blue;
           color: white;
           background: blue;
           border-radius: 5px;
+        } */
+
+        button {
+          cursor: pointer;
+          font-family: 'Arimo', sans-serif;
+          border: 0;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 14px 40px;
+          border-radius: 100px;
+          font-weight: 600;
+          box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+            
+          /* &:focus {
+            outline: 0;  
+          } */
         }
 
-        #the-cert, #hash-it-button, #fraud-it-button, #finish-photoshop-button, #submit-again-button, #restart-button {
+        #the-cert {
+          display: none;
+          margin:auto;
+        }
+
+        #hash-it-button, #fraud-it-button, #finish-photoshop-button, #submit-again-button, #restart-button {
           display: none;
         }
 
-        #real-hash-display,#fraud-check-hash-display, #hash-compare {
+        #action-panel {
+          display: block;
+          padding: 20px;
+          overflow: hidden;
+        }
+
+        #button-zone {
+          width: 500px;
+          padding: 20px;
+          float:left;
+        }
+
+        #hash-zone {
+          width: 500px;
+          padding: 20px;
+          overflow: hidden;
+        }
+
+
+        #real-hash-display,#fraud-check-hash-display{
           display: none;
+        }
+
+        #hash-compare {
+          display: none;
+          background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 14px 40px;
+          font-weight: 600;
+          text-align: center;
         }
 
         #photoshop-field, #photoshop-field2 {
@@ -37,6 +86,25 @@
   <h1>Navozyme Cert Fraud Simulator</h1>
   <p>✨ Forge your Maritime Certificate. See what happens with NCAP!</p>
 
+  <div id="hash-compare">Hash Compare Outcome</div>
+
+  <div id ="action-panel">
+    <div id="button-zone">
+      <button id="start-button">Start Simulation</button>
+      <button id="hash-it-button">Hash Cert!</button>
+      <button id="fraud-it-button">Psst, Want to Photoshop Your Cert?</button>
+      <button id="finish-photoshop-button">Finish Photoshop</button>
+      <button id="submit-again-button">Submit New Cert</button>
+      <button id="restart-button">Restart Simulation</button>
+    </div>
+    <div id="hash-zone">
+      <div id="real-hash-display">Real Cert Hash Display Placeholder</div>
+      <div id="fraud-check-hash-display">Fraud Check Hash Display Placeholder</div>
+  </div>
+  </div>
+
+  
+
   <div id ="the-cert" style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
     <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
            <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
@@ -53,17 +121,7 @@
     </div>
     </div>
 
-    <div id="real-hash-display">Real Cert Hash Display Placeholder</div>
-    <div id="fraud-check-hash-display">Fraud Check Hash Display Placeholder</div>
-    <div id="hash-compare">Hash Compare Outcome</div>
-
-    <button id="start-button">Start Simulation</button>
-    <button id="hash-it-button">Hash Cert!</button>
-    <button id="fraud-it-button">Psst, Want to Photoshop Your Cert?</button>
-    <button id="finish-photoshop-button">Finish Photoshop</button>
-    <button id="submit-again-button">Submit New Cert</button>
-    <button id="restart-button">Restart Simulation</button>
-
+    
   <!-- <script src="script.js"></script> -->
 </body>
 </html>

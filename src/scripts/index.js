@@ -27,12 +27,10 @@ var fraudCertHash;
 function compareHash(realCertHash,fraudCertHash){
     
     if (realCertHash === fraudCertHash){
-        console.log('They are the same');
-        hashCompare.innerText = 'They are the same';
+        hashCompare.innerText = 'THIS HAS THE SAME DIGITAL FINGERPRINT. THIS IS AN AUTHENTIC DOCUMENT';
     }
     else {
-        console.log('They are different');
-        hashCompare.innerText = 'They are different documents';
+        hashCompare.innerText = 'THIS DOES NOT APPEAR TO BE THE SAME DOCUMENT';
     }
 }
 
@@ -69,7 +67,7 @@ hashItButton.addEventListener('click',function(){
     var bob1 = [certName.innerText, certOwner.innerText,certNumber.innerText];
     console.log(hash(bob1)); 
     realCertHash = hash(bob1);
-    realHashDisplay.innerText = realCertHash;  
+    realHashDisplay.innerText = "Hash Original Cert: " + realCertHash;  
     realHashDisplay.style.display = 'block'; 
 });
 
@@ -79,7 +77,9 @@ fraudItButton.addEventListener('click',function(){
     finishPhotoshopButton.style.display = 'block';
     certOwner.style.display = 'none';
     photoshopField.style.display = 'block';
+    photoshopField.style.borderColor="#FF0000";
     photoshopField2.style.display = 'block';
+    photoshopField2.style.borderColor="#FF0000";
     certOwner.style.display = 'none';
     certNumber.style.display = 'none';
 });
@@ -102,7 +102,7 @@ finishPhotoshopButton.addEventListener('click',function(){
     fraudCertHash = hash(bob2);
     
     // Show Outcome & Allow Restart
-    fraudCheckHashDisplay.innerText = fraudCertHash;  
+    fraudCheckHashDisplay.innerText = "Hash Submitted Cert: " + fraudCertHash;  
     fraudCheckHashDisplay.style.display = 'block';
     finishPhotoshopButton.style.display = 'none';
     submitAgainButton.style.display = 'block';
