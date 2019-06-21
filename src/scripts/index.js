@@ -1,3 +1,19 @@
+const hash = require('object-hash');
+
+let peter = {name: 'Peter', stapler: false, friends: ['Joanna', 'Michael', 'Samir'] };
+let michael = {name: 'Michael', stapler: false, friends: ['Peter', 'Samir'] };
+let bob = {name: 'Bob', stapler: true, friends: [] };
+ 
+/***
+ * sha1 hex encoding (default)
+ */
+console.log(hash(peter));
+// 4d73157b6a4d824733a9a4853be98643cfd4b40e
+console.log(hash(michael));
+// 6a713c08cffec5c4e8f6dab4095b8a909d1abe16
+console.log(hash(bob));
+// d47abbd616733c4bcdd88c527e9e58834a56e6a0
+
 // Cert Details Info
 let certName = document.getElementById('cert-name');
 let certOwner = document.getElementById('cert-owner');
