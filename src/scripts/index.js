@@ -1,4 +1,3 @@
-
 // Cert Details Info
 let certName = document.getElementById('cert-name');
 let certOwner = document.getElementById('cert-owner');
@@ -8,10 +7,13 @@ certName.innerText = 'Basic Training';
 certOwner.innerText = 'John Stark';
 certNumber.innerText = 'BT-35-T3557';
 
+
 // Initializing & Display
 let theCert = document.getElementById('the-cert');
 let photoshopField = document.getElementById('photoshop-field');
 let photoshopField2 = document.getElementById('photoshop-field2');
+
+
 
 // Button Management
 let startButton = document.getElementById('start-button');
@@ -36,7 +38,7 @@ startButton.addEventListener('click',function(){
 
 hashItButton.addEventListener('click',function(){ 
     hashItButton.style.display = 'none';
-    fraudItButton.style.display = 'block';
+    fraudItButton.style.display = 'block';    
 });
 
 
@@ -73,5 +75,3 @@ submitAgainButton.addEventListener('click',function(){
 restartButton.addEventListener('click',function(){ 
     window.location.reload();
 });
-
-
